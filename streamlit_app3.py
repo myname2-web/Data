@@ -6,7 +6,16 @@ import seaborn as sns
 @st.cache_data
 
 # Daten laden
-df = pd.read_csv("train.csv")
+file_uploader = st.file_uploader("train.csv", type = "csv")
+
+if file_uploader is not None:
+    df = pd.read_csv(file_uploader)
+    st.dataframe(df)
+
+st.title("Titanic : binary classification")
+st.sidebar.title("Table of contents")
+pages = ["Exploration", "DataVisualisation", "Modelling"]
+page = st.sidebar.radio("Go to", pages)
 
 st.title("Titanic : binary classification")
 st.sidebar.title("Table of contents")
