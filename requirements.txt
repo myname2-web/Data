@@ -4,3 +4,4 @@ matplotlib
 seaborn 
 numpy 
 streamlit-survey
+scikit-learn
